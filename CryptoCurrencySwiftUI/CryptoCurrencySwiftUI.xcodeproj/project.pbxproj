@@ -215,6 +215,9 @@
 				Base,
 			);
 			mainGroup = 529E8B142C9882900072FA56;
+			packageReferences = (
+				529E8B4A2C9885580072FA56 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 529E8B1E2C9882900072FA56 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -582,6 +585,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		529E8B4A2C9885580072FA56 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 529E8B152C9882900072FA56 /* Project object */;
 }
