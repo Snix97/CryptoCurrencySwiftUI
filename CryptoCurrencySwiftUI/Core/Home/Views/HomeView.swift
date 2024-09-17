@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
+    // Use a state object as the single source of truth for a reference type that you store in a view hierarchy
+    @StateObject var viewModel = HomeViewModel()
+
     var body: some View {
         NavigationView {
             ScrollView(.vertical, showsIndicators: false) {
@@ -17,9 +20,10 @@ struct HomeView: View {
                 
                 Divider()
                 
+                
                 //All coins view
                 AllCoinsView()
-                
+               
             }
             .navigationTitle("Live Prices")
         }
