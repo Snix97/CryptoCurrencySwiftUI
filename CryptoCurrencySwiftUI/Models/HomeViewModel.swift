@@ -32,7 +32,7 @@ class HomeViewModel: ObservableObject {
                   
             guard let data = data else { return }
             let dataAsString = String(data: data, encoding: .utf8) 
-            print("DEBUG: DataString = \(dataAsString)")
+            print("DEBUG: DataString = \(String(describing: dataAsString))")
             
             
             

@@ -42,3 +42,10 @@ struct HomeView: View {
 //    }
 //}
 
+/*
+ @ObservedObject and @StateObject property wrappers require your object to conform to the ObservableObject protocol. This protocol stands for an object with a publisher that emits before the object has changed and allows you to tell SwiftUI to trigger a view redraw
+ 
+ The state object makes sure the view model retains between view redraws. @StateObject wrapper to ensure consistent results after a view redraw.
+ 
+ @StateObject and @ObservedObject have similar characteristics but differ in how SwiftUI manages their lifecycle. Use the state object property wrapper to ensure consistent results when the current view creates the observed object. Whenever you inject an observed object as a dependency, you can use the @ObservedObject.
+ */
