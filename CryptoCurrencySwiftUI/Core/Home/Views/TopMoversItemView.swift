@@ -37,8 +37,8 @@ struct TopMoversItemView: View {
         .frame(width: 140, height: 140)
         .overlay(
             RoundedRectangle(cornerRadius: 20)
-            .stroke(Color(.systemGray5), lineWidth: 5)
-            .shadow(/*color:.black,*/ radius: 20)
+            .stroke(Color(.systemGray5), lineWidth: 2)
+            .shadow(/*color:.black,*/ radius: 10)
             )
         
     }
