@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    // Use a state object as the single source of truth for a reference type that you store in a view hierarchy
+    // Use a state object as the single source of truth for a reference type that you store in a view hierarchy. VM changes trigger updates to UI
     @StateObject var viewModel = HomeViewModel()
 
     var body: some View {
@@ -22,7 +22,7 @@ struct HomeView: View {
                 
                 
                 //All coins view
-                AllCoinsView()
+                AllCoinsView(viewModel: viewModel)
                
             }
             .navigationTitle("Live Prices")
@@ -32,9 +32,9 @@ struct HomeView: View {
 }
 
 
-#Preview {
-    HomeView()
-}
+//#Preview {
+//    HomeView()
+//}
 
 //struct HomeView_Previews: PreviewProvider {
 //    static var previews: some View {

@@ -15,7 +15,7 @@ import Foundation
 import Foundation
 
 // MARK: - Coin
-struct Coin: Codable {
+struct Coin: Codable, Identifiable {
     let id: String
     let symbol: String
     let name: String
@@ -80,11 +80,16 @@ class JSONNull: Codable, Hashable {
     public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
             return true
     }
-
+    
+    // Hashable.hashValue' is deprecated as a protocol requirement; conform type 'JSONNull' to 'Hashable' by implementing 'hash(into:)' instead
     public var hashValue: Int {
             return 0
     }
 
+//    func hash(into hasher: inout Hasher) {
+//            hasher.combine(ObjectIdentifier(self))
+//    }
+    
     public init() {}
 
     public required init(from decoder: Decoder) throws {
