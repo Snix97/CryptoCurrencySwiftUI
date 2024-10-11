@@ -32,9 +32,9 @@ struct HomeView: View {
 }
 
 
-//#Preview {
-//    HomeView()
-//}
+#Preview {
+    HomeView(viewModel: HomeViewModel())
+}
 
 //struct HomeView_Previews: PreviewProvider {
 //    static var previews: some View {
