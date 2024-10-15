@@ -10,6 +10,9 @@ import Kingfisher
 
 struct TopMoversItemView: View {
     
+    //Progamatically change text for dark/lightMode support
+    @Environment(\.colorScheme) var colorScheme
+    
     let coin: Coin
     
     var body: some View {
@@ -27,10 +30,12 @@ struct TopMoversItemView: View {
                 Text(coin.symbol.uppercased())
                     .font(.caption)
                     .fontWeight(.bold)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
                 
                 Text(coin.currentPrice.toCurrency())
                     .font(.caption)
                     .foregroundColor(coin.priceChange24H > 0 ? .green : .red)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
             }
             
             //Coin percent change
@@ -39,6 +44,7 @@ struct TopMoversItemView: View {
                 .foregroundColor(.green)
         }
         .frame(width: 140, height: 140)
+        .background(Color("ItemBackgroundColor"))
         .overlay(
             RoundedRectangle(cornerRadius: 20)
             .stroke(Color(.systemGray5), lineWidth: 2)

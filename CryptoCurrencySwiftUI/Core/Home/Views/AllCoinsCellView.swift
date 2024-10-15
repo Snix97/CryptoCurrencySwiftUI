@@ -9,6 +9,10 @@ import SwiftUI
 import Kingfisher
 
 struct AllCoinsCellView: View {
+    
+    //Progamatically change text for dark/lightMode support
+    @Environment(\.colorScheme) var colorScheme
+    
     let coin: Coin
     
     var body: some View {
@@ -31,11 +35,14 @@ struct AllCoinsCellView: View {
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .padding(.leading, 4)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
+
                 
                 //Coin price info
                 Text(coin.symbol.uppercased())
                     .font(.subheadline)
                     .padding(.leading, 6)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
             }
             .padding(.leading, 2)
             
@@ -47,6 +54,7 @@ struct AllCoinsCellView: View {
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .padding(.leading, 4)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
                 
                 //Coin price info
                 Text(coin.priceChangePercentage24H.toPercentString())
