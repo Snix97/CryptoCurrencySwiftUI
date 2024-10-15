@@ -43,16 +43,16 @@ struct AllCoinsCellView: View {
             
             //Coin price info
             VStack(alignment: .trailing, spacing: 4) {
-                Text("\(coin.currentPrice)")
+                Text("\(coin.currentPrice.toCurrency())")
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .padding(.leading, 4)
                 
                 //Coin price info
-                Text("\(coin.priceChangePercentage24H)")
+                Text(coin.priceChangePercentage24H.toPercentString())
                     .font(.subheadline)
                     .padding(.leading, 6)
-                    .foregroundColor(.red)
+                    .foregroundColor(coin.priceChange24H > 0 ? .green : .red)
             }
             .padding(.leading, 2)
             
