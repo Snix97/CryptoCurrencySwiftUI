@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct TopMoversItemView: View {
     
@@ -15,7 +16,7 @@ struct TopMoversItemView: View {
         VStack(alignment: .leading) {
 
             //Coin Image
-            Image(systemName: "bitcoinsign.circle.fill")
+            KFImage(URL(string:  coin.image!))
                 .resizable()
                 .frame(width: 32, height: 32)
                 .foregroundColor(.orange)
@@ -41,7 +42,7 @@ struct TopMoversItemView: View {
         .overlay(
             RoundedRectangle(cornerRadius: 20)
             .stroke(Color(.systemGray5), lineWidth: 2)
-            .shadow(/*color:.black,*/ radius: 10)
+            .shadow(radius: 10)
             )
         
     }
